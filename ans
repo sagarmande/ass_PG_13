@@ -1,0 +1,114 @@
+
+
+**Question 1: Calculate and Print Values**
+```python
+import math
+
+# Fixed values
+C = 50
+H = 30
+
+# Function to calculate Q
+def calculate_Q(D):
+    return int(math.sqrt((2 * C * D) / H))
+
+# Input sequence of D values
+input_sequence = input("Enter comma-separated values for D: ")
+D_values = input_sequence.split(',')
+
+# Calculate and print Q values
+Q_values = [calculate_Q(int(D)) for D in D_values]
+print(','.join(map(str, Q_values)))
+```
+
+**Question 2: Generate a 2-D Array**
+```python
+# Input values for X and Y
+X, Y = map(int, input("Enter values for X and Y (comma-separated): ").split(','))
+
+# Generate the 2-D array
+result = [[i * j for j in range(Y)] for i in range(X)]
+
+# Print the 2-D array
+for row in result:
+    print(row)
+```
+
+**Question 3: Sort Words Alphabetically**
+```python
+# Input sequence of words
+input_sequence = input("Enter comma-separated words: ")
+words = input_sequence.split(',')
+
+# Sort the words alphabetically
+sorted_words = sorted(words)
+
+# Print the sorted words
+print(','.join(sorted_words))
+```
+
+**Question 4: Remove Duplicates and Sort Words**
+```python
+# Input sequence of words
+input_sequence = input("Enter whitespace-separated words: ")
+words = input_sequence.split()
+
+# Remove duplicates and sort words
+unique_words = sorted(set(words))
+
+# Print the sorted words
+print(' '.join(unique_words))
+```
+
+**Question 5: Count Letters and Digits**
+```python
+# Input sentence
+sentence = input("Enter a sentence: ")
+
+# Initialize counts
+letter_count = 0
+digit_count = 0
+
+# Iterate through characters in the sentence
+for char in sentence:
+    if char.isalpha():
+        letter_count += 1
+    elif char.isdigit():
+        digit_count += 1
+
+# Print counts
+print("LETTERS", letter_count)
+print("DIGITS", digit_count)
+```
+
+**Question 6: Check Password Validity**
+```python
+import re
+
+# Function to check password validity
+def is_valid_password(password):
+    # Define regex patterns for criteria
+    patterns = [
+        r'[a-z]',
+        r'[0-9]',
+        r'[A-Z]',
+        r'[$#@]',
+        r'^.{6,12}$'
+    ]
+    
+    # Check each pattern
+    for pattern in patterns:
+        if not re.search(pattern, password):
+            return False
+    
+    return True
+
+# Input comma-separated passwords
+passwords = input("Enter comma-separated passwords: ").split(',')
+
+# Check and print valid passwords
+valid_passwords = [password for password in passwords if is_valid_password(password)]
+print(','.join(valid_passwords))
+```
+
+You can run each of these programs separately, providing the required input when prompted, and they will perform the specified tasks.
